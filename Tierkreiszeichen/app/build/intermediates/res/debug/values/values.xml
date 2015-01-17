@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/Thomas/Dropbox/Dokumente/EigeneBuecher/Android5/AndroidStudio/Tierkreiszeichen/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">Tierkreiszeichen</string>
+    <string name="aquarius">Wassermann</string>
+    <string name="aries">Widder</string>
+    <string name="cancer">Krebs</string>
+    <string name="capricornus">Steinbock</string>
+    <string name="format_string">dd. MMMM</string>
+    <string name="gemini">Zwillinge</string>
+    <string name="interval">%1$s bis %2$s</string>
+    <string name="leo">Löwe</string>
+    <string name="libra">Waage</string>
+    <string name="pisces">Fische</string>
+    <string name="sagittarius">Schütze</string>
+    <string name="scorpius">Skorpion</string>
+    <string name="taurus">Stier</string>
+    <string name="virgo">Jungfrau</string>
+    <string name="wikipedia_url">http://de.m.wikipedia.org/wiki/%1$s_(Tierkreiszeichen)</string>
+</resources>

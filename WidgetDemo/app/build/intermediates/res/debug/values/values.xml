@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/tommi/Dropbox/Dokumente/Eigenes/Buecher/Android5/AndroidStudio/WidgetDemo/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">WidgetDemo</string>
+    <string name="apply">Übernehmen</string>
+    <string name="hint">Name einer Klasse</string>
+</resources>

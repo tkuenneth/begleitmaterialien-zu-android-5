@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/Thomas/Dropbox/Dokumente/EigeneBuecher/Android5/AndroidStudio/DebugDemo/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">DebugDemo</string>
+    <string name="hello">Hello World, DebugDemoActivity!</string>
+</resources>
