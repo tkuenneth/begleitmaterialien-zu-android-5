@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/tommi/Dropbox/Dokumente/Eigenes/Buecher/Android5/AndroidStudio/ActionBarDemo1/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">ActionBarDemo1</string>
+    <string name="day">Tag</string>
+    <string name="empty">kein Menüelement angeklickt</string>
+    <string name="month">Monat</string>
+    <string name="today">heute</string>
+    <string name="week">Woche</string>
+</resources>

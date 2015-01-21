@@ -100,7 +100,7 @@ public class FragmentDemo3Activity extends Activity {
                 // neue Activity starten
                 Intent intent = new Intent();
                 intent.setClass(getActivity(), DetailsActivity.class);
-                intent.putExtra("index", index);
+                intent.putExtra(DetailsFragment.INDEX, index);
                 startActivity(intent);
             }
         }
@@ -108,7 +108,7 @@ public class FragmentDemo3Activity extends Activity {
 
     public static class DetailsFragment extends Fragment {
 
-        private static final String INDEX = "index";
+        public static final String INDEX = "index";
 
         public static DetailsFragment newInstance(int index) {
             DetailsFragment f = new DetailsFragment();
