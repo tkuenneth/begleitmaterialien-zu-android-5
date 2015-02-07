@@ -36,5 +36,12 @@ public class AnrufDemoActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        // SMS senden
+//        String telnr = "123-456-789";
+//        Uri smsUri = Uri.parse("smsto:" + telnr);
+//        Intent sendIntent = new Intent(Intent.ACTION_SENDTO, smsUri);
+//        sendIntent.putExtra("sms_body", "Hier steht der Text der Nachricht...");
+//        startActivity(sendIntent);
     }
 }

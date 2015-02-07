@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/tommi/Dropbox/Dokumente/Eigenes/Buecher/Android5/AndroidStudio/OpenWeatherMapWeather/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">OpenWeatherMap Weather</string>
+    <string name="button">Anzeigen</string>
+    <string name="content_description">Wetter als Bild</string>
+    <string name="hint">Name einer Stadt</string>
+    <string name="temp_template">%1d \u2103</string>
+</resources>
