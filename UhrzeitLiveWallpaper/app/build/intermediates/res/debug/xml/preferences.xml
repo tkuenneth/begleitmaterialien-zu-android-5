@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/preferences_title"
+    android:key="uhrzeitlivewallpaper">
+
+    <ListPreference
+        android:key="refresh"
+        android:title="@string/refresh_title"
+        android:summary="@string/refresh_summary"
+        android:entries="@array/refresh_names"
+        android:entryValues="@array/refresh_values" />
+
+</PreferenceScreen>
+<!-- From: file:/C:/Users/tommi/Dropbox/Dokumente/Eigenes/Buecher/Android5/AndroidStudio/UhrzeitLiveWallpaper/app/src/main/res/xml/preferences.xml -->

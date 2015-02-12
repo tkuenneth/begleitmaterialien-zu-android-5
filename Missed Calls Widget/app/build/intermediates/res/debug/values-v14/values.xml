@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/tommi/Dropbox/Dokumente/Eigenes/Buecher/Android5/AndroidStudio/Missed%20Calls%20Widget/app/src/main/res/values-v14/dimens.xml -->
+    <eat-comment/>
+    <dimen name="AppWidget_1Cell">40dp</dimen>
+    <dimen name="widget_margin">0dp</dimen>
+</resources>

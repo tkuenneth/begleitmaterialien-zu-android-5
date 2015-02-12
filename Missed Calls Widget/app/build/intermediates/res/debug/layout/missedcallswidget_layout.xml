@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_id"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/widget_margin">
+
+    <RelativeLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000">
+
+        <ImageView
+            android:id="@+id/missedcallswidget_image"
+            android:src="@drawable/telefon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="4dp"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/missedcallswidget_count"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_centerVertical="true"
+            style="@style/Text.VeryBig" />
+
+    </RelativeLayout>
+
+</FrameLayout><!-- From: file:/C:/Users/tommi/Dropbox/Dokumente/Eigenes/Buecher/Android5/AndroidStudio/Missed%20Calls%20Widget/app/src/main/res/layout/missedcallswidget_layout.xml -->

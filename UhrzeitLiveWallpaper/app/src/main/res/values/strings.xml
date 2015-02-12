@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">UhrzeitLiveWallpaper</string>
+    <string name="wallpaper_name">Uhrzeit</string>
+    <string name="description">Eine zweifarbige Uhr</string>
+    <string name="button">Live Wallpaper auswählen</string>
+    <string name="preferences_title">Einstellungen von UhrzeitLiveWallpaper</string>
+    <string name="refresh_title">Anzeigedauer</string>
+    <string name="refresh_summary">Zeit in Sekunden, nach der ein Farbwechsel erfolgt</string>
+</resources>

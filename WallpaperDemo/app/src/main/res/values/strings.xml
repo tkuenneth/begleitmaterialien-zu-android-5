@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WallpaperDemo</string>
+    <string name="choose">Hintergrund auswählen mit...</string>
+    <string name="hello">Hallo Android!</string>
+</resources>
