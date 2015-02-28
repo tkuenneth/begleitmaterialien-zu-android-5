@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BackupDemo3</string>
+    <string name="input1">Eingabefeld #1</string>
+    <string name="input2">Eingabefeld #2</string>
+    <string name="save">Übernehmen</string>
+</resources>
