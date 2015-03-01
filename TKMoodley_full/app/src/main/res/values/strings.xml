@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Meine Stimmung</string>
+    <string name="how_are_you">Wie geht es Ihnen?</string>
+    <string name="history">Verlauf</string>
+    <string name="saved">Gespeichert!</string>
+    
+    <string name="mi_good">Gut</string>
+    <string name="mi_ok">OK</string>
+    <string name="mi_bad">Schlecht</string>
+    <string name="mi_delete">Löschen</string>
+</resources>

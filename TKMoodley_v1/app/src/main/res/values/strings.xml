@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Meine Stimmung</string>
+    <string name="how_are_you">Wie geht es Ihnen?</string>
+    <string name="history">Verlauf</string>
+    <string name="saved">Gespeichert!</string>
+</resources>
