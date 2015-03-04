@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/tommi/Dropbox/Dokumente/Eigenes/Buecher/Android5/AndroidStudio/KameraDemo2/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">KameraDemo2</string>
+    <string name="shoot">Foto aufnehmen</string>
+</resources>
