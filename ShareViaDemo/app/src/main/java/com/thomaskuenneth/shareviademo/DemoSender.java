@@ -2,6 +2,8 @@ package com.thomaskuenneth.shareviademo;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorMatrix;
@@ -9,6 +11,7 @@ import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +20,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DemoSender extends Activity {
 
@@ -81,12 +86,34 @@ public class DemoSender extends Activity {
     }
 
     private void share(Uri uri) {
-        // das zu feuernde Intent bauen
-        Intent target = new Intent(Intent.ACTION_SEND, uri);
-        target.setType("image/?");
-        // Activity-Chooser-Intent bauen und feuern
-        Intent intent = Intent.createChooser(target,
-                getString(R.string.share_via));
-        startActivity(intent);
+        List<Intent> intentList = new ArrayList<>();
+        // Activities suchen, die auf ACTION_SEND reagieren
+        PackageManager pm = getPackageManager();
+        Intent targetIntent = new Intent(Intent.ACTION_SEND);
+        targetIntent.setType("image/?");
+        List<ResolveInfo> activities = pm.queryIntentActivities(targetIntent, PackageManager.MATCH_DEFAULT_ONLY);
+        // Intents der Liste hinzufügen
+        for (ResolveInfo info : activities) {
+            String packageName = info.activityInfo.packageName;
+            if ("com.thomaskuenneth.shareviademo".equals(packageName)) {
+                // die eigene App ausblenden
+                continue;
+            }
+            // das zu feuernde Intent bauen und hinzufügen
+            Intent intent = new Intent(Intent.ACTION_SEND, uri);
+            intent.setType("image/?");
+            intent.setPackage(packageName);
+            intentList.add(intent);
+        }
+        // Chooser aufrufen
+        int size = intentList.size();
+        if (size > 0) {
+            Intent chooserIntent = Intent.createChooser(intentList.remove(
+                    size - 1), getString(R.string.share_via));
+            Parcelable[] p = new Parcelable[size - 1];
+            chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, intentList.toArray(p));
+            startActivity(chooserIntent);
+        }
+        finish();
     }
 }
