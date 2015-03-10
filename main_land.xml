@@ -11,7 +11,7 @@
         android:datePickerMode="spinner"
         android:calendarViewShown="false"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
     />
 
     <DatePicker
@@ -20,9 +20,9 @@
         android:layout_height="wrap_content"
         android:calendarViewShown="false"
         android:datePickerMode="spinner"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@id/date1"
+        android:layout_toEndOf="@id/date1"
         />
 
     <Button
@@ -30,7 +30,7 @@
         android:text="@string/calc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@id/date2"
         />
 
@@ -38,9 +38,9 @@
         android:id="@+id/textview_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/button_calc"
+        android:layout_toEndOf="@id/button_calc"
         android:layout_alignBaseline="@id/button_calc"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         />
 
 </RelativeLayout>
