@@ -9,13 +9,11 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class AccountDemo2 extends Activity implements
         AccountManagerCallback<Bundle> {
@@ -60,24 +58,37 @@ public class AccountDemo2 extends Activity implements
         }
     }
 
-    private String getFromServer(String url, String token) {
+    private String getFromServer(String _url, String token) {
         StringBuilder sb = new StringBuilder();
-        HttpGet get = new HttpGet(url);
-        // Auth Token in den Header übertragen
-        get.addHeader("Authorization", "GoogleLogin auth=" + token);
-        HttpClient httpclient = new DefaultHttpClient();
-        HttpResponse r;
+        HttpURLConnection httpURLConnection = null;
         try {
-            // http-get
-            r = httpclient.execute(get);
-            InputStream is = r.getEntity().getContent();
-            int ch;
-            // Daten laden
-            while ((ch = is.read()) != -1) {
-                sb.append((char) ch);
+            URL url = new URL(_url);
+            httpURLConnection = (HttpURLConnection) url.openConnection();
+            httpURLConnection.setRequestProperty("Authorization", "GoogleLogin auth=" + token);
+            int responseCode = httpURLConnection.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                InputStreamReader inputStreamReader = new InputStreamReader(
+                        httpURLConnection.getInputStream());
+                BufferedReader bufferedReader = new BufferedReader(
+                        inputStreamReader);
+                int i;
+                while ((i = bufferedReader.read()) != -1) {
+                    sb.append((char) i);
+                }
+                try {
+                    bufferedReader.close();
+                } catch (IOException e) {
+                    // ein Fehler beim Schließen wird bewusst ignoriert
+                }
+            } else {
+                Log.d(TAG, "responseCode: " + responseCode);
             }
-        } catch (IOException e) { // ClientProtocolException
-            Log.e(TAG, "getFromServer()", e);
+        } catch (IOException tr) {
+            Log.e(TAG, "Fehler beim Zugriff auf " + _url, tr);
+        } finally {
+            if (httpURLConnection != null) {
+                httpURLConnection.disconnect();
+            }
         }
         return sb.toString();
     }
