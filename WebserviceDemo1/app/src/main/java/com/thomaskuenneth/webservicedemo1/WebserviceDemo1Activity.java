@@ -28,7 +28,7 @@ import java.util.regex.Pattern;
 public class WebserviceDemo1Activity extends Activity {
 
     private static final String TAG = WebserviceDemo1Activity.class.getSimpleName();
-    private static final String API_KEY = null; // ggf. API-Schlüssel hier eintragen
+    private static final String API_KEY = "<API-Schlüssel hier eintragen>";
     private static final String URL
             = "https://www.googleapis.com/urlshortener/v1/url";
     private static final Pattern PATTERN_CHARSET
@@ -85,7 +85,7 @@ public class WebserviceDemo1Activity extends Activity {
         StringBuilder sb = new StringBuilder();
         HttpURLConnection httpURLConnection = null;
         try {
-            URL url = new URL(URL);
+            URL url = new URL(URL + "?key=" + API_KEY);
             httpURLConnection = (HttpURLConnection) url.openConnection();
             // Verbindung konfigurieren
             httpURLConnection.setDoOutput(true);
@@ -94,9 +94,8 @@ public class WebserviceDemo1Activity extends Activity {
             httpURLConnection.setRequestProperty("Content-Type",
                     "application/json; charset="
                             + Charset.defaultCharset().name());
-            if (API_KEY != null) {
-                httpURLConnection.setRequestProperty("apikey", API_KEY);
-            }
+            // war früher für den Aufruf des Service erforderlich
+            // httpURLConnection.setRequestProperty("apikey", API_KEY);
             httpURLConnection.setFixedLengthStreamingMode(data.length);
             // Daten senden
             httpURLConnection.getOutputStream().write(data);
@@ -124,6 +123,8 @@ public class WebserviceDemo1Activity extends Activity {
                 } catch (IOException e) {
                     // ein Fehler beim Schließen wird bewusst ignoriert
                 }
+            }else {
+                Log.d(TAG, "responseCode: " + responseCode);
             }
         } catch (Throwable tr) { // MalformedURLException, IOException,
             // NullPointerException,

@@ -40,7 +40,7 @@ public class FragmentDemo3Activity extends Activity {
             super.onActivityCreated(savedInstanceState);
 
             // Liste aus einem String-Array befüllen
-            setListAdapter(new ArrayAdapter<String>(getActivity(),
+            setListAdapter(new ArrayAdapter<>(getActivity(),
                     android.R.layout.simple_list_item_activated_1,
                     new String[]{"eins", "zwei", "drei"}));
 

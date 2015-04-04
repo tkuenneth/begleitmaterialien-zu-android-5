@@ -2,6 +2,7 @@ package com.thomaskuenneth.uithreaddemo;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -11,6 +12,8 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
 public class UIThreadDemo extends Activity {
+
+    private static final String TAG = UIThreadDemo.class.getSimpleName();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,7 @@ public class UIThreadDemo extends Activity {
                 try {
                     Thread.sleep(3500);
                 } catch (InterruptedException e) {
+                    Log.e(TAG, "sleep()", e);
                 }
                 // for (int i = 0; i < 1;);
                 textview.setText(UIThreadDemo.this.getString(R.string.end));
