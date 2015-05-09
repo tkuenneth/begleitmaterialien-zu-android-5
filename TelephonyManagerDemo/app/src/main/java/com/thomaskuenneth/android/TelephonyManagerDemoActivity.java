@@ -25,6 +25,7 @@ public class TelephonyManagerDemoActivity extends Activity {
         mgr = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
         psl = new PhoneStateListener() {
 
+            @Override
             public void onCallStateChanged(int state, String incomingNumber) {
                 textview.setText(("Status: " + state + "\n") + "Eingehende Rufnummer: " + incomingNumber + "\n");
             }
