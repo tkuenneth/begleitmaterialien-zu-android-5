@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hint">Bitte eineen Text eingeben</string>
+    <string name="hint">Bitte einen Text eingeben</string>
     <string name="app_name">BackupDemo2</string>
     <string name="button">Speichern</string>
 </resources>
