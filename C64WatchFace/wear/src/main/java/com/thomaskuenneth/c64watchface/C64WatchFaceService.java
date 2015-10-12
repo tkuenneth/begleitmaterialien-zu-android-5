@@ -35,6 +35,7 @@ import android.text.format.Time;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.SurfaceHolder;
+import android.view.WindowInsets;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -134,6 +135,8 @@ public class C64WatchFaceService extends CanvasWatchFaceService {
 
         Time mTime;
 
+        boolean isRound = false;
+
         @Override
         public void onCreate(SurfaceHolder holder) {
             super.onCreate(holder);
@@ -164,6 +167,12 @@ public class C64WatchFaceService extends CanvasWatchFaceService {
                     .build());
 
             c64CursorVisible = false;
+        }
+
+        @Override
+        public void onApplyWindowInsets(WindowInsets insets) {
+            super.onApplyWindowInsets(insets);
+            isRound = insets.isRound();
         }
 
         @Override
@@ -223,7 +232,12 @@ public class C64WatchFaceService extends CanvasWatchFaceService {
             int borderWidth = (int) (((float) w / 100f) * 5f);
             canvas.drawPaint(borderPaint);
             Rect r = new Rect(borderWidth, borderHeight, w - 1 - borderWidth, h - borderHeight - 1);
-            canvas.drawRect(r, backgroundPaint);
+
+            if (isRound) {
+                canvas.drawCircle(bounds.width() / 2, bounds.height() / 2, (bounds.width() - borderWidth) / 2, backgroundPaint);
+            } else {
+                canvas.drawRect(r, backgroundPaint);
+            }
 
             if (last == -1) {
                 int maxWidth = r.width();
