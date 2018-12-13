@@ -9,7 +9,7 @@ von Thomas Künneth
 ISBN 978-3-8362-2665-3  
 https://www.rheinwerk-verlag.de/android-5_3493/
 
-Es gibt zwei Branches: master und Buch-Version
+Es gibt zwei Branches: master und Buch-Version  
 There are two branches: master and Buch-Version
 
 master enthält einige Aktualisierungen, um die Beispiele unter 
