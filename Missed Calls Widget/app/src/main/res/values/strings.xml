@@ -6,4 +6,7 @@
     <string name="transparent">Durchscheinend</string>
     <string name="red">Rot</string>
     <string name="green">Grün</string>
+    <string name="missing_permission">Keine Berechtigung</string>
+    <string name="gear">\u2699</string>
+    <string name="hint01">telephone receiver</string>
 </resources>

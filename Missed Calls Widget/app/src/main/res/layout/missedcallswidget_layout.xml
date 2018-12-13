@@ -1,34 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/widget_id"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/widget_margin">
 
-    <RelativeLayout
-        android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#80000000">
+    <TextView
+        android:id="@+id/missedcallswidget_count"
+        style="@style/Text.VeryBig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="4dp"
+        android:includeFontPadding="false" />
 
-        <ImageView
-            android:id="@+id/missedcallswidget_image"
-            android:src="@drawable/telefon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="4dp"
-            android:layout_centerVertical="true" />
+    <ImageView
+        android:id="@+id/missedcallswidget_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="4dp"
+        android:layout_toStartOf="@id/missedcallswidget_count"
+        android:contentDescription="@string/hint01"
+        android:scaleType="fitCenter"
+        android:src="@drawable/telefon" />
 
-        <TextView
-            android:id="@+id/missedcallswidget_count"
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="2dp"
-            android:layout_centerVertical="true"
-            style="@style/Text.VeryBig" />
+    <TextView
+        android:id="@+id/config"
+        style="@style/Text.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="4dp"
+        android:text="@string/gear"
+        android:textColor="@android:color/white" />
 
-    </RelativeLayout>
-
-</FrameLayout>
+</RelativeLayout>
