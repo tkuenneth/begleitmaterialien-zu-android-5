@@ -6,9 +6,12 @@ import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.RemoteViews;
+
+import org.jetbrains.annotations.NotNull;
 
 public class MissedCallsConfigActivity extends Activity {
 
@@ -31,9 +34,18 @@ public class MissedCallsConfigActivity extends Activity {
         resultIntent = new Intent();
         resultIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, getAppWidgetIdFromIntent(getIntent()));
         setResult(RESULT_CANCELED, resultIntent);
-        if (!MissedCallsService.canReadCallLog(this)) {
+        if (!MissedCallsWidget.canReadCallLog(this)) {
             requestPermissions(new String[]{Manifest.permission.READ_CALL_LOG}, RQ_PERMISSIONS);
         }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NotNull String[] permissions, @NotNull int[] grantResults) {
+        if ((grantResults.length > 0)
+                && (grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+            MissedCallsWidget.sendBroadcast(this);
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     private void updateWidget(int color) {
@@ -49,7 +61,6 @@ public class MissedCallsConfigActivity extends Activity {
             resultIntent.putExtra(MissedCallsWidget.getColorKey(mAppWidgetId), color);
             setResult(RESULT_OK, resultIntent);
         }
-        MissedCallsService.startService(this);
         finish();
     }
 

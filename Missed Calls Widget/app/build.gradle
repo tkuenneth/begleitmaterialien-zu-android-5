@@ -26,4 +26,5 @@ repositories {
     google()
 }
 dependencies {
+implementation 'org.jetbrains:annotations:15.0'
 }
